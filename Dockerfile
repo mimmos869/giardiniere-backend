@@ -4,5 +4,6 @@ RUN wget -q https://github.com/pocketbase/pocketbase/releases/download/v0.22.0/p
     && unzip pocketbase_0.22.0_linux_amd64.zip \
     && rm pocketbase_0.22.0_linux_amd64.zip \
     && chmod +x /app/pocketbase
+COPY pb_migrations ./pb_migrations
 EXPOSE 8080
 CMD ["/app/pocketbase", "serve", "--http=0.0.0.0:8080", "--dir=/pb_data"]
