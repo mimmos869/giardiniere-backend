@@ -6,4 +6,4 @@ RUN wget -q https://github.com/pocketbase/pocketbase/releases/download/v0.22.0/p
     && chmod +x /app/pocketbase
 COPY pb_migrations ./pb_migrations
 EXPOSE 8080
-CMD ["/app/pocketbase", "serve", "--http=0.0.0.0:8080", "--dir=/pb_data"]
+CMD ["/app/pocketbase", "serve", "--http=0.0.0.0:8080", "--dir=/pb_data", "--migrationsDir=/app/pb_migrations"]
